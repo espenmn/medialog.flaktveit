@@ -1,0 +1,91 @@
+<tal:contentviews tal:define="ploneview context/@@plone;"
+                  tal:condition="not:ploneview/showToolbar"
+                  i18n:domain="plone">
+
+<div class="medialog-contentmenu">
+    <div tal:replace="structure provider:plone.contentmenu" />
+</div>
+
+<script>
+  $( function() {
+    $( ".medialog-contentmenu a" ).click(function( event ) {
+      event.preventDefault();
+      $( this ).next().toggle();
+    });
+  });jQuery
+</script>
+
+
+
+
+<style>
+
+  .plone-toolbar-title {display: none;}
+
+  a.label span { display: block}
+
+  div.medialog-contentmenu {
+  	display: flex
+  }
+
+  div.medialog-contentmenu li {
+  	width: 19%;
+    min-width: 160px;
+  }
+
+  div.medialog-contentmenu > li {
+  	display: xnone;
+  }
+
+  #xplone-contentmenu-workflow ul {
+  	display: flex;
+  	padding-left: 0;
+  }
+
+
+   #xplone-contentmenu-workflow ul li {
+  	margin: 0.5rem; padding: 1rem 2rem; background: #123456;
+  	color:  whitesmoke; ;
+  	border-radius: 10px;
+  	margin-bottom: 2rem;
+  	margin-top: 0;
+  }
+
+
+
+  a.label-state-published {
+  	display: xnone;
+  }
+  div.medialog-contentmenu li#plone-contentmenu-workflow {
+  	xdisplay: flex;
+  }
+
+  div.medialog-contentmenu ul {
+  	display: none;
+  }
+
+
+  div.medialog-contentmenu a.label-state-published {
+  	background: green;
+  	padding: 0.2rem;
+  	color:  whitesmoke;;
+  }
+
+  div.medialog-contentmenu li.plone-toolbar-submenu-header {
+  	display: none;
+  }
+
+  div.medialog-contentmenu li {
+  	background: white
+  }
+
+
+
+  div.medialog-contentmenu {
+  	border-bottom:  1px solid silver;
+  	margin-bottom: 2rem;
+  	padding-bottom:2rem;
+
+  }
+</style>
+</tal:contentviews>

@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="medialog.flaktveit"
+      metal:use-macro="context/main_template/macros/master">
+<body>
+  <metal:block fill-slot="content-core">
+
+
+ &lt;fieldset name="${view/fieldsetname}" label="${view/fieldsetlabel}"&gt;
+      &lt;field name="${view/fieldname}" type="collective.easyform.fields.RichLabel" easyform:serverSide="False" easyform:THidden="False"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;rich_label&gt;&lt;h3&gt;${view/fieldtitle}&lt;/h3&gt;&#13;
+&lt;p&gt;${view/farge}, lagpris kr.${view/price},–&lt;/p&gt;&lt;/rich_label&gt;
+        &lt;title&gt;${view/fieldtitle}&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name="bilde_${view/fieldname}" type="collective.easyform.fields.RichLabel" easyform:serverSide="False" easyform:THidden="False"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;rich_label&gt;&lt;p&gt;&lt;img class="image-richtext image-inline" alt="" height="" width="" src=" " data-linktype="image" data-scale="large" data-val="" /&gt;&lt;/p&gt;&lt;/rich_label&gt;
+        &lt;title&gt;Bilde&lt;/title&gt;
+      &lt;/field&gt;
+
+      <tal:repeat tal:repeat="size view/sizes">
+
+        &lt;field name="${view/fieldname}-${python: size.lower()}" type="zope.schema.Int" easyform:serverSide="False" easyform:THidden="False"&gt;
+          &lt;description&gt;${size}&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;${size} (antall)&lt;/title&gt;
+        &lt;/field&gt;
+      </tal:repeat>
+       
+    &lt;/fieldset&gt;
+
+
+
+
+  </metal:block>
+</body>
+</html>

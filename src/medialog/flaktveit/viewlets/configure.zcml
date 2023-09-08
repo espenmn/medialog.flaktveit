@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="medialog.flaktveit">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewlet
+     name="change-state-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="medialog.flaktveit.interfaces.IMedialogFlaktveitLayer"
+     class=".change_state_viewlet.ChangeStateViewlet"
+     template="change-state-viewlet.pt"
+     permission="zope2.View"
+     />
+
+
+     <browser:viewlet
+     name="medialog.flaktveit.contentviews"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     class="plone.app.layout.viewlets.common.ContentViewsViewlet"
+     template="contentviews.pt"
+     layer="medialog.flaktveit.interfaces.IMedialogFlaktveitLayer"
+     permission="zope2.View"
+ />
+
+
+
+
+
+</configure>

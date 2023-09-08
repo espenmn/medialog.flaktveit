@@ -1,0 +1,204 @@
+
+
+<tal:contentviews tal:define="ploneview context/@@plone;
+                  portaltype context/Type"
+                  tal:condition="python: portaltype == 'Produkt'"
+                  i18n:domain="plone">
+
+<div class="medialog-contentmenu">
+    <div tal:replace="structure provider:plone.contentmenu" />
+</div>
+
+<script>
+  $( function() {
+    $( ".medialog-contentmenu #plone-contentmenu-workflow > a" ).click(function( event ) {
+      event.preventDefault();
+      $( this ).next().toggle();
+    });
+  });jQuery
+</script>
+
+
+
+<style>
+
+  .medialog-contentmenu #plone-contentmenu-workflow li.plonetoolbar-workfow-transition {
+      color: white;
+      padding: 4px;
+      margin: 4px 0;
+      border-radius: 5px;
+      display: block;
+  }
+
+  .medialog-contentmenu #plone-contentmenu-workflow .plonetoolbar-workfow-transition a {
+      padding: 4px 8px;
+      xmargin: 4px 7px;
+      border-radius: 5px;
+      display: block;
+  }
+
+  .medialog-contentmenu #workflow-transition-advanced,
+  .medialog-contentmenu a#workflow-transition-advanced,
+  .medialog-contentmenu #plone-contentmenu-portletmanager,
+  .medialog-contentmenu #plone-contentmenu-actions,
+  .medialog-contentmenu > li:not(#plone-contentmenu-workflow),
+  .medialog-contentmenu .plone-toolbar-title {display: none;}
+
+  .medialog-contentmenu a.label span { display: block}
+
+  .medialog-contentmenu #plone-contentmenu-workflow > a,
+  .medialog-contentmenu #plone-contentmenu-workflow > ul {
+   xdisplay: block;
+   width: auto;
+   min-width: 300px;
+   max-width: 400px;
+  }
+
+    .medialog-contentmenu #plone-contentmenu-workflow > ul  {
+    padding: 0;
+    margin-left: 0;
+    width: 300px;
+    max-width: 400px;
+    }
+      .medialog-contentmenu #plone-contentmenu-workflow > ul >li {
+      width: 300px;
+      min-width: 300px;
+      max-width: 400px;
+      }
+
+
+  #workflow-transition-reject {
+       color: white;
+       background-color: red;
+     }
+
+
+  #plone-contentmenu-workflow .label-state-pending {
+    background-color: #0CD4F0;
+  }
+
+  #workflow-transition-submit {
+    background-color: #0CD4F0;
+    color: white;
+  }
+
+  #plone-contentmenu-workflow .label-state-behandlet {
+     background-color: #1091A3;
+  }
+
+  #workflow-transition-send_bestilling {
+      background-color: #1091A3;
+      color: white;
+  }
+
+  .#plone-contentmenu-workflow .label-state-hentet {
+     background-color: #123456;
+  }
+
+  #workflow-transition-send_henting {
+      background-color: #123456;
+      color: white;
+
+  }
+
+
+
+  #plone-contentmenu-workflow .label-state-internally_published {
+     background-color: #98F033;
+  }
+
+  # workflow-transition-submit {
+     background-color: #98F033;
+     color: white;
+  }
+
+  #plone-contentmenu-workflow .label-state-external{
+     background-color: red;
+     color: white;
+  }
+
+  #plone-contentmenu-workflow .label-state-internal{
+     background-color: #D118F0;
+     color: white;
+  }
+
+
+
+
+
+
+  .medialog-contentmenu #plone-contentmenu-workflow > a {padding: 10px; border-radius: 10px;}
+  .medialog-contentmenu #plone-contentmenu-workflow a { font-size: 120% }
+
+  .medialog-contentmenu  #plone-contentmenu-workflow > a,
+  .medialog-contentmenu span.icon-plone-contentmenu-workflow,
+  .medialog-contentmenu  #plone-contentmenu-workflow .plone-toolbar-caret,
+  .medialog-contentmenu  a.icon-plone-contentmenu-workflow { color: white !important}
+
+  div.medialog-contentmenu {
+  	display: flex
+  }
+
+  div.medialog-contentmenu li {
+  	width: 19%;
+    min-width: 160px;
+    list-style-type: none;
+list-style-image: none;
+  }
+
+  div.medialog-contentmenu > li {
+  	display: xnone;
+  }
+
+  #xplone-contentmenu-workflow ul {
+  	display: flex;
+  	padding-left: 0;
+  }
+
+
+   #xplone-contentmenu-workflow ul li {
+  	margin: 0.5rem; padding: 1rem 2rem; background: #123456;
+  	color:  whitesmoke; ;
+  	border-radius: 10px;
+  	margin-bottom: 2rem;
+  	margin-top: 0;
+  }
+
+
+
+  a.label-state-published {
+  	display: xnone;
+  }
+  div.medialog-contentmenu li#plone-contentmenu-workflow {
+  	xdisplay: flex;
+  }
+
+  div.medialog-contentmenu ul {
+  	display: none;
+  }
+
+
+  div.xmedialog-contentmenu a.label-state-published {
+  	background: green;
+  	padding: 0.2rem;
+  	color:  whitesmoke;;
+  }
+
+  div.medialog-contentmenu li.plone-toolbar-submenu-header {
+  	display: none;
+  }
+
+  div.medialog-contentmenu li {
+  	background: white
+  }
+
+
+
+  div.medialog-contentmenu {
+  	border-bottom:  1px solid silver;
+  	margin-bottom: 2rem;
+  	padding-bottom:2rem;
+
+  }
+</style>
+</tal:contentviews>
